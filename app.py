@@ -1058,6 +1058,10 @@ macanarya"""
 app = Flask(__name__)
 app.config['JSON_SORT_KEYS'] = False
 
+@app.route('/')
+def succes():
+    return 'API bisa jalan!'
+
 @app.route('/macanarya', methods=['POST'])
 def generate_output ():
     raw = json.loads(request.data)
